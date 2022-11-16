@@ -84,7 +84,7 @@ paf <- read.table(args$i, fill=TRUE, header=FALSE)
 len <- read.table(args$l) #, stringAsFactor=FALSE)
 
 
-paf$ava <- paf$V1:paf$V6
+paf$ava <- paste(paf$V1,paf$V6, sep = ":")
 paf$strand <- ifelse(paf$V5=='+', 1, -1)
 paf[paf$strand==-1,8:9] <- paf[paf$strand==-1,9:8]
 
